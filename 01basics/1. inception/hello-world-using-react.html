@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="id">
+
+    </div>
+
+    <div id="id2">
+
+    </div>
+
+    <div id="id3">
+
+    </div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        // single element 
+        const heading= React.createElement("h1",{},"hello-world");
+
+        const root = ReactDOM.createRoot(document.getElementById("id"));
+
+        root.render(heading);
+
+        // nested element
+
+        const parent = React.createElement("div",{},
+                React.createElement("h1",{},"i am child")
+        );
+
+        const root2 = ReactDOM.createRoot(document.getElementById("id2"));
+
+        root2.render(parent);
+
+        // siblings
+
+        const parent2 = React.createElement("div",{},
+                [React.createElement("h1",{},"i am child1"),React.createElement("h1",{},"i am child2")]
+        );
+
+        const root3 = ReactDOM.createRoot(document.getElementById("id3"));
+
+        root3.render(parent2);
+
+        
+    </script>
+</body>
+</html>
